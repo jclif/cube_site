@@ -38,6 +38,11 @@ p {
 
 .current {
   color:white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
 }
 
 .nav-top {
@@ -59,20 +64,24 @@ p {
   margin:10px 10px;
 }
 
+.icon-wrapper {
+  text-align: center;
+  position:fixed;
+  bottom:20px;
+  width: 60px;
+}
+
+.icon-wrapper a {
+  margin:auto;
+}
+
 .icon-wrapper .icon {
-  float:left;
-  height:25px;
-  margin-right:5px;
+  margin-top:10px;
+  height:30px;
 }
 
 .icon-wrapper .icon:hover {
   border: 2px solid transparent;
-}
-
-#open-event {
-  position:fixed;
-  bottom: 10px;
-  left: 10px;
 }
 
 .nav-top li a:hover {
@@ -99,10 +108,12 @@ p {
 }
 
 .prev {
-  float:left;
+  float: left;
+  cursor: pointer
 }
 
 .next {
+  cursor: pointer;
   float:right;
 }
 

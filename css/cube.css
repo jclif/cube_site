@@ -31,27 +31,27 @@
 }
 
 #cube .front {
-  background: hsla( 133, 40%, 62%, 0.95 );
+  background: hsla( 133, 40%, 62%, 0.96 );
 }
 
 #cube .back {
-  background: hsla( 47, 90%, 73%, 0.95 );
+  background: hsla( 47, 90%, 73%, 0.96 );
 }
 
 #cube .right {
-  background: hsla( 190, 44%, 56%, 0.95 );
+  background: hsla( 190, 44%, 56%, 0.96 );
 }
 
 #cube .left {
-  background: hsla( 6, 80%, 68%, 0.95 );
+  background: hsla( 6, 80%, 68%, 0.96 );
 }
 
 #cube .top {
-  background: hsla( 24, 100%, 65%, 0.95 );
+  background: hsla( 24, 100%, 65%, 0.96 );
 }
 
 #cube .bottom {
-  background: hsla( 226, 50%, 65%, 0.95 );
+  background: hsla( 226, 50%, 65%, 0.96 );
 }
 
 #cube .front {
