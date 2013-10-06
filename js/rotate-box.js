@@ -1,6 +1,6 @@
 var init = function() {
   var box = document.querySelector('.container').children[0],
-      showPanelButtons = document.querySelectorAll('#show-buttons button'),
+      showPanelLinks = document.querySelectorAll('#show-links a'),
       panelClassName = 'show-front',
 
       onButtonClick = function( event ){
@@ -9,9 +9,9 @@ var init = function() {
         box.addClassName( panelClassName );
       };
 
-  for (var i=0, len = showPanelButtons.length; i < len; i++) {
-    showPanelButtons[i].addEventListener( 'click', onButtonClick, false);
+  for (var i=0, len = showPanelLinks.length; i < len; i++) {
+    showPanelLinks[i].addEventListener( 'click', onButtonClick, false);
   }
 };
-  
+
 window.addEventListener( 'DOMContentLoaded', init, false);
