@@ -15,6 +15,7 @@ body {
   color:black;
   z-index: 1;
   position: fixed;
+  float: left;
   left:0;
   top:0;
   width: 200px;
@@ -37,6 +38,16 @@ body {
 .nav-bar img {
   margin-left:30px;
   height:75px;
+}
+
+.container acticle {
+  margin: auto;
+  width:60%;
+  color: black;
+}
+
+.home p {
+  margin-top:100px;
 }
 
 footer {

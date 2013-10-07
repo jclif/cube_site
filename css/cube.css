@@ -35,7 +35,7 @@
           backface-visibility: hidden;
 }
 
-#cube .front  { background: hsla(   0, 100%, 50%, 0.7 ); }
+#cube .front  { background: hsla( 180, 100%, 50%, 0.7 );  }
 #cube .back   { background: hsla(  60, 100%, 50%, 0.7 ); }
 #cube .right  { background: hsla( 120, 100%, 50%, 0.7 ); }
 #cube .left   { background: hsla( 180, 100%, 50%, 0.7 ); }

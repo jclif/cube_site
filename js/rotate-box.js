@@ -7,6 +7,7 @@ var init = function() {
         box.removeClassName( panelClassName );
         panelClassName = event.target.className;
         box.addClassName( panelClassName );
+        $("html, body").animate({ scrollTop: 0 }, "slow");
       };
 
   for (var i=0, len = showPanelLinks.length; i < len; i++) {
