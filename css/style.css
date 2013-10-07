@@ -1,18 +1,25 @@
-section, footer, nav {
+div .article {
+  margin: auto;
+  width:60%;
+}
+
+section, article, nav {
   display: block;
+}
+
+h1 {
+  text-align:center;
 }
 
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
   -webkit-text-size-adjust: none;
-  color: #333;
+  color: black;
   margin: 0;
-  background-color:black;
   overflow-x: hidden;
 }
 
 .nav-bar {
-  color:black;
   z-index: 1;
   position: fixed;
   float: left;
@@ -40,31 +47,8 @@ body {
   height:75px;
 }
 
-.container acticle {
-  margin: auto;
-  width:60%;
-  color: black;
-}
-
 .home p {
   margin-top:100px;
-}
-
-footer {
-  border-top: 1px solid #CCC;
-  font-size: 0.8em;
-  position: relative;
-  z-index: 100;
-}
-
-#disclaimer {
-  color: red;
-  font-weight: bold;
-  display: none;
-}
-
-.no-csstransforms3d #disclaimer {
-  display: block;
 }
 
 figure {
