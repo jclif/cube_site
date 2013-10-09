@@ -10,10 +10,9 @@
 
   <link rel="stylesheet" type="text/css" href="../css/style.css" />
   <link rel="stylesheet" type="text/css" href="../css/cube.css" />
-
+  <link rel="stylesheet" type="text/css" href="../css/snake.css" />
 </head>
 <body>
-
 <nav class="nav-bar clearfix">
   <ul id="show-links">
     <li><a class="show-front">Home</a></li>
@@ -56,6 +55,10 @@
       <figure class="left">
         <div class="article">
           <h1>Projects</h1>
+          <button class="snake-button">Play Snake!</button>
+          <p>TIME: <span id="time"></span>  <span id="paused"></span></p>
+          <p>Score: <span id="score"></span></p>
+          <div class="snake-wrapper"></div>
         </div>
       </figure>
       <!-- Resume -->
@@ -76,6 +79,17 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js"></script>
   <script src="../js/utils.js"></script>
   <script src="../js/rotate-box.js"></script>
+
+  <script src="../js/snake.js"></script>
+  <script src="../js/board.js"></script>
+  <script src="../js/ui.js"></script>
+  <script>
+    $('.snake-button').on("click", function() {
+      $('.snake-wrapper').html("");
+      var view = new Game.SnakeUI(30);
+      view.start();
+    });
+  </script>
 
 </body>
 </html>
