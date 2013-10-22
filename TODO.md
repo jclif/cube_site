@@ -11,10 +11,24 @@ Prettify
 * _ get the goddamn colors right!
 * _ style the sidebar
 
+About
+-----
+* _ be serial
+
+Projects
+--------
+* _ pics (carousel?)
+* _ link to github
+* _ link to live site (put sites other than chessapp on heroku)
+
 Games
 -----
 * _ tabs on all games with options for boards/canvas of different size
 * _ make sure that changing tab or clicking sidebar destroys current game javascript
+
+Somethingelse
+-------------
+* _ what goes here??!!??
 
 ###Snake
 * _ fix rendering issue (check with robert)

@@ -1,5 +1,6 @@
 div .article {
-  width:60%;
+  padding: 20px;
+  width:80%;
 }
 
 section, article, nav {
@@ -43,16 +44,13 @@ body {
 }
 
 .nav-bar img {
-  margin-left:30px;
-  height:75px;
+  float:left;
+  height:25px;
+  margin:5px;
 }
 
 .home p {
   margin-top:100px;
-}
-
-figure {
-  margin: 0;
 }
 
 .clearfix:after {
