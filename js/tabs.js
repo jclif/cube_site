@@ -10,7 +10,6 @@ var tabLinks = [];
 var contentDivs = [];
 
 function init() {
-  console.log("yo bro");
 
   // Grab the tab links and content divs from the page
   var tabListItems = document.getElementById('tabs').childNodes;

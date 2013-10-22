@@ -10,11 +10,19 @@
     this.pressed = false;
   }
 
-  SnakeUI.prototype.start = function() {
+  SnakeUI.prototype.start = function(callback) {
+    window.addEventListener("keydown", function(e) {
+        // space and arrow keys
+        if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+            e.preventDefault();
+        }
+    }, false);
+
     var that = this;
 
-    this.draw();
-    this.render();
+    that.callback = callback;
+    that.draw();
+    that.render();
     intervalID = null;
     $(document).keydown(function(e) {
       if (e.which === 80) {
@@ -46,16 +54,18 @@
     });
 
     this.startStep();
-  }
+  };
 
   SnakeUI.prototype.startStep = function() {
     var that = this;
     intervalID = window.setInterval(function() {
       that.step();
-    }, 300);
-  }
+    }, 100);
+  };
 
   SnakeUI.prototype.step = function() {
+    var that = this;
+
     this.pressed = false;
     this.count += 1;
     this.board.snake.move();
@@ -72,19 +82,21 @@
 
     if(this.board.hasLost()){
       clearInterval(intervalID);
-      alert("u lose");
+      alert("Oops!");
+      that.callback();
     } else if (this.board.getOpenCells().length === 0) {
       clearInterval(intervalID);
-      alert("u win!");
+      alert("You Win!");
+      that.callback();
     }
 
 
-    if(this.count % 6 === 0) {
+    if(this.count % 10 === 0) {
       this.board.addApple();
     }
 
     this.render();
-  }
+  };
 
   SnakeUI.prototype.render = function() {
     this.clearSnakeUI();

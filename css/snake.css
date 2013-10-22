@@ -2,25 +2,31 @@
   box-sizing:border-box;
 }
 
-.game-wrapper{
+.game-wrapper {
   margin:auto;
+  border: 1px solid white;
 }
 
 .row{
-  height:10px;
+  height:15px;
 }
 
-.cell{
-  height:10px;
-  width:10px;
+.cell {
+  background: black;
+  height:15px;
+  width:15px;
   float:left;
-  border:1px solid;
 }
 
-.snake{
+.snake {
   background: green;
 }
 
-.apple{
+.apple {
   background: red ;
+}
+
+.snake-button {
+  margin: auto;
+  display: block;
 }

@@ -9,16 +9,21 @@
   <title>Jared Clifton | Web Developer</title>
 
   <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <link rel="stylesheet" type="text/css" href="../css/style.css" />
   <link rel="stylesheet" type="text/css" href="../css/cube.css" />
   <link rel="stylesheet" type="text/css" href="../css/snake.css" />
   <link rel="stylesheet" type="text/css" href="../css/tabs.css" />
   <link rel="stylesheet" type="text/css" href="../css/resume.css" media="all" />
-  <link rel="stylesheet" type="text/css" href="../css/huh.css" media="all" />
+  <!-- Buttons !!! -->
+  <link rel="stylesheet" type="text/css" href="../css/buttons.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome-ie7.min.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" media="all" />
+
 
 </head>
 <body onload="init()">
-<nav class="nav-bar clearfix">
+<nav class="clearfix">
   <ul id="show-links">
     <li><a class="show-front">Home</a></li>
     <li><a class="show-right">About</a></li>
@@ -26,12 +31,14 @@
     <li><a class="show-top">Resume</a></li>
     <li><a class="show-bottom">Games</a></li>
     <li><a class="show-back">Somethingelse</a></li>
-    <li>Also find me @</li>
+    <li>
+      <a href="http://www.linkedin.com/pub/jared-clifton/68/45/453" target="_blank"><img class="icon" src="../img/linkedin.svg" alt="linkedin"></a>
+      <a href="https://github.com/jclif" target="_blank"><img class="icon" src="../img/github_alt.svg" alt="octocat"></a>
+      <a href="https://www.facebook.com/jared.clifton" target="_blank"><img class="icon" src="../img/facebook.svg" alt="facebook"></a>
+      <a href="http://jcclif.tumblr.com/" target="_blank"><img class="icon" src="../img/tumblr.svg" alt="tumblr"></a>
+      <img id="open-event" class="icon" src="../img/mail.png" alt="letter">
+    </li>
   </ul>
-  <a href="http://www.linkedin.com/pub/jared-clifton/68/45/453" target="_blank"><img class="icon" src="../img/linkedin.svg" alt="linkedin"></a>
-  <a href="https://github.com/jclif" target="_blank"><img class="icon" src="../img/github_alt.svg" alt="octocat"></a>
-  <a href="https://www.facebook.com/jared.clifton" target="_blank"><img class="icon" src="../img/facebook.svg" alt="facebook"></a>
-  <a href="http://jcclif.tumblr.com/" target="_blank"><img class="icon" src="../img/tumblr.svg" alt="tumblr"></a>
 </nav>
 
   <section class="container">
@@ -40,7 +47,7 @@
       <figure class="front">
         <div class="article">
           <h1> Jared Craig Clifton</h1>
-          <p>Welcommemeeeeeemmeememme.</p>
+          <p>Welcome to my space on the web. It's currently under construction, but feel free to have a look around.</p>
         </div>
       </figure>
       <!-- About Page -->
@@ -59,22 +66,28 @@
       </figure>
       <!-- Portfolio Page -->
       <figure class="left">
-        <div class="article" style="text-align: center;">
+        <div class="article projects">
           <h1>Projects</h1>
-          <h3>So you think you can chess?</h3><br><a href="http://chess.jaredcraigclifton.com"><img style="height: 50px;" src="../img/pawn.png" alt="pawn"></a>
-          <br>
-          <h3>Ninety-nine Cats</h3>
-          <br>
-          <a href="#cats_on_heroku"><img src="http://placekitten.com/300/300" alt="CATS"></a>
-          <br>
-          <br>
-          <h3>Moar Rails Stuff</h3>
+          <div class="project">
+            <h3>Chessnuts</h3>
+            <a href="http://chess.jaredcraigclifton.com"><img style="height: 50px;" src="../img/pawn.png" alt="pawn"></a>
+            <p>A social chess web application.</p>
+          </div>
+          <div class="project">
+            <h3>Ninety-nine Cats</h3>
+            <a href="#cats_on_heroku"><img src="http://placekitten.com/300/300" alt="CATS"></a>
+            <p>Coming Soon</p>
+          </div>
+          <div class="project">
+          <h3>Photo Tagger</h3>
+          <p>Coming Soon</p>
+        </div>
         </div>
       </figure>
       <!-- Resume -->
       <figure class="top">
         <div class="article">
-          <h2>Resume</h2>
+          <h1>Resume</h1>
           <p>Included below is a brief account of my skills and experience. Also, feel free to download my <a href="../pdfs/resume-jared-clifton.pdf">official resume</a>, or find me on <a href="http://www.linkedin.com/pub/jared-clifton/68/45/453">linkedin</a></p>
         </div>
       </figure>
@@ -82,21 +95,22 @@
       <!-- Games !!! -->
       <figure class="bottom">
         <div class="article">
-          <h1>GaMeS !!!</h1>
+          <h1>Games</h1>
           <ul class="tabrow" id="tabs">
             <li class="selected"><a href="#snake">Snake</a></li>
             <li><a href="#asteroids">Asteroids</a></li>
             <li><a href="#minesweeper">Minesweeper</a></li>
             <li><a href="#tictactoe">Tic Tac Toe</a></li>
-            <li><a href="#moarawesomestuff">Moar Awesome Stuff</a></li>
+            <li><a href="#towersofhanoi">Towers of Hanoi</a></li>
           </ul>
 
           <div class="tabContent" id="snake">
-            <h2>Snakey Snakes</h2>
             <div>
-              <button class="snake-button">Play Snake!</button>
-              <p>TIME: <span id="time"></span>  <span id="paused"></span></p>
-              <p>Score: <span id="score"></span></p>
+              <div class="snake-info clearfix">
+                <p style="float:left;">TIME: <span id="time"></span>  <span id="paused"></span></p>
+                <p style="float:right;">Score: <span id="score"></span></p>
+                <div class="bttn-wrapper"><button class="snake-button">Play Snake!</button></div>
+              </div>
               <div class="snake-wrapper"></div>
             </div>
           </div>
@@ -122,8 +136,7 @@
             </div>
           </div>
 
-          <div class="tabContent" id="moarawesomestuff">
-            <h2>What Goes Here??!?!?!</h2>
+          <div class="tabContent" id="towersofhanoi">
             <div>
               <p>Moar Awesome STUFFFUDdfDLkjfslkjas;djf!?!?.</p>
             </div>
@@ -134,7 +147,9 @@
     </div>
   </section>
 
+  <!-- jQuery(UI) -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
   <!-- THE CUBEEEE -->
   <script src="../js/utils.js"></script>
@@ -142,6 +157,11 @@
   <!-- Tried to use some js to dynamically set cube size on load, -->
   <!-- but not so worky goodly. Womp. Will stick with a centered cube for now. -->
   <!--<script src="../js/sizing.js"></script>-->
+
+  <!-- Tooltip -->
+  <script src="../js/tooltip.js"></script>
+
+  <!-- Buttons !!! -->
 
   <!-- Tabs -->
   <script src="../js/tabs.js"></script>
