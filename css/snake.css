@@ -26,7 +26,13 @@
   background: red ;
 }
 
-.snake-button {
+.snake-info {
+  height:70px;
+}
+
+.snake-button-wrapper {
+  font-weight: bold;
   margin: auto;
-  display: block;
+  width:160px;
+  text-align: center;
 }

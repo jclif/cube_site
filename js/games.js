@@ -1,9 +1,9 @@
 $('.snake-button').on("click", function() {
-  $('.snake-wrapper').html("");
-  var snakeView = new Game.SnakeUI(45);
-  $('.snake-button').hide();
+  $('.snake-button-wrapper').hide();
   callback = function() {
-    $('.snake-button').show();
+    $('.snake-button-wrapper').show();
   };
+
+  var snakeView = new Game.SnakeUI(47);
   snakeView.start(callback);
 });
