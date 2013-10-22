@@ -1,4 +1,9 @@
+body {
+  background: #eeeeee;
+}
+
 .container {
+  margin: auto;
   width: 1020px;
   height: 1020px;
   position: relative;
@@ -31,6 +36,10 @@
      -moz-backface-visibility: hidden;
        -o-backface-visibility: hidden;
           backface-visibility: hidden;
+}
+
+.article {
+  margin:auto;
 }
 
 #cube .front {

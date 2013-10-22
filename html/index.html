@@ -6,20 +6,24 @@
   <!-- disable zooming -->
   <meta name="viewport" content="initial-scale=1.0, user-scalable=0" />
 
-  <title>Jared Clifton</title>
+  <title>Jared Clifton | Web Developer</title>
 
   <link rel="stylesheet" type="text/css" href="../css/style.css" />
   <link rel="stylesheet" type="text/css" href="../css/cube.css" />
   <link rel="stylesheet" type="text/css" href="../css/snake.css" />
+  <link rel="stylesheet" type="text/css" href="../css/tabs.css" />
+  <link rel="stylesheet" type="text/css" href="../css/resume.css" media="all" />
+  <link rel="stylesheet" type="text/css" href="../css/huh.css" media="all" />
+
 </head>
-<body>
+<body onload="init()">
 <nav class="nav-bar clearfix">
   <ul id="show-links">
     <li><a class="show-front">Home</a></li>
     <li><a class="show-right">About</a></li>
     <li><a class="show-left">Projects</a></li>
     <li><a class="show-top">Resume</a></li>
-    <li><a class="show-bottom">Something</a></li>
+    <li><a class="show-bottom">Games</a></li>
     <li><a class="show-back">Somethingelse</a></li>
     <li>Also find me @</li>
   </ul>
@@ -42,55 +46,107 @@
       <figure class="right">
         <div class="article">
           <h1>About Me:</h1>
-          <p>Before he could get to it, he heard a scream under the wheels, and saw through the dust the rim passing over the poor wretch's back.  The driver of the cart slashed his whip at my brother, who ran round behind the cart.  The multitudinous shouting confused his ears.  The man was writhing in the dust among his scattered money, unable to rise, for the wheel had broken his back, and his lower limbs lay limp and dead.  My brother stood up and yelled at the next driver, and a man on a black horse came to his assistance.</p>
-          <p>There was a smash as the pole of a carriage crashed into the cart that the man on horseback stopped.  My brother looked up, and the man with the gold twisted his head round and bit the wrist that held his collar.  There was a concussion, and the black horse came staggering sideways, and the carthorse pushed beside it.  A hoof missed my brother's foot by a hair's breadth.  He released his grip on the fallen man and jumped back.  He saw anger change to terror on the face of the poor wretch on the ground, and in a moment he was hidden and my brother was borne backward and carried past the entrance of the lane, and had to fight hard in the torrent to recover it.</p>
-          <p>Then beyond the bend my brother stopped again.  Miss Elphinstone was white and pale, and her sister-in-law sat weeping, too wretched even to call upon "George."  My brother was horrified and perplexed. So soon as they had retreated he realised how urgent and unavoidable it was to attempt this crossing.  He turned to Miss Elphinstone, suddenly resolute.</p>
+          <p>Howdy. My name is Jared, and I'm a Web Developer. I hail from Texas, but I'm here in New York to look for interesting problems to solve.</p>
+          <p>I like long walks on the beach and hot, luxurious baths. My hobbies include underwater basket weaving, looking great in a scarf, and making a mean cup of joe. wink.</p>
+          <p>Feel free to have a look around and bask in the warm glow of my excellence.</p>
+          <p>You're Welcome.</p>
         </div>
       </figure>
       <!-- Somethingelse Page -->
       <figure class="back">
         <h1>Somethingelse</h1>
       </figure>
-      <!-- Projects Page -->
+      <!-- Portfolio Page -->
       <figure class="left">
         <div class="article">
           <h1>Projects</h1>
           <h3><a href="http://chess.jaredcraigclifton.com">So you think you can chess?</a></h3>
-          <button class="snake-button">Play Snake!</button>
-          <p>TIME: <span id="time"></span>  <span id="paused"></span></p>
-          <p>Score: <span id="score"></span></p>
-          <div class="snake-wrapper"></div>
         </div>
       </figure>
       <!-- Resume -->
       <figure class="top">
-        <div>
-          <h1>Resume</h1>
+        <div class="article">
+          <h2>Resume</h2>
+          <p>Included below is a brief account of my skills and experience. Also, feel free to download my <a href="../pdfs/resume-jared-clifton.pdf">official resume</a>, or find me on <a href="http://www.linkedin.com/pub/jared-clifton/68/45/453">linkedin</a></p>
         </div>
       </figure>
-      <!-- Something -->
+
+      <!-- Games !!! -->
       <figure class="bottom">
-        <div>
-          <h1>Something</h1>
+        <div class="article">
+          <h1>GaMeS !!!</h1>
+          <ul class="tabrow" id="tabs">
+            <li class="selected"><a href="#snake">Snake</a></li>
+            <li><a href="#asteroids">Asteroids</a></li>
+            <li><a href="#minesweeper">Minesweeper</a></li>
+            <li><a href="#tictactoe">Tic Tac Toe</a></li>
+            <li><a href="#moarawesomestuff">Moar Awesome Stuff</a></li>
+          </ul>
+
+          <div class="tabContent" id="snake">
+            <h2>Snakey Snakes</h2>
+            <div>
+              <button class="snake-button">Play Snake!</button>
+              <p>TIME: <span id="time"></span>  <span id="paused"></span></p>
+              <p>Score: <span id="score"></span></p>
+              <div class="snake-wrapper"></div>
+            </div>
+          </div>
+
+          <div class="tabContent" id="asteroids">
+            <h2>Asteroids</h2>
+            <div>
+              <p>We put the steroid in asteroid.</p>
+            </div>
+          </div>
+
+          <div class="tabContent" id="minesweeper">
+            <h2>Minesweeper</h2>
+            <div>
+              <p>Sweep those mines.</p>
+            </div>
+          </div>
+
+          <div class="tabContent" id="tictactoe">
+            <h2>Toe Tics</h2>
+            <div>
+              <p>Ew.</p>
+            </div>
+          </div>
+
+          <div class="tabContent" id="moarawesomestuff">
+            <h2>What Goes Here??!?!?!</h2>
+            <div>
+              <p>Moar Awesome STUFFFUDdfDLkjfslkjas;djf!?!?.</p>
+            </div>
+          </div>
+
         </div>
       </figure>
     </div>
   </section>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js"></script>
+
+  <!-- THE CUBEEEE -->
   <script src="../js/utils.js"></script>
   <script src="../js/rotate-box.js"></script>
+  <!-- Tried to use some js to dynamically set cube size on load, -->
+  <!-- but not so worky goodly. Womp. Will stick with a centered cube for now. -->
+  <!--<script src="../js/sizing.js"></script>-->
 
+  <!-- Tabs -->
+  <script src="../js/tabs.js"></script>
+
+  <!-- Snake -->
   <script src="../js/snake.js"></script>
   <script src="../js/board.js"></script>
   <script src="../js/ui.js"></script>
-  <script>
-    $('.snake-button').on("click", function() {
-      $('.snake-wrapper').html("");
-      var view = new Game.SnakeUI(30);
-      view.start();
-    });
-  </script>
+  <script src="../js/games.js"></script>
+
+  <!-- Asteroids -->
+
+  <!-- So stalkers can stalk me stalking stalkers -->
   <script type="text/javascript">
 
     var _gaq = _gaq || [];
