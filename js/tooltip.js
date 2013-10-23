@@ -1,8 +1,6 @@
 $(function() {
   $openevent = $("#open-event");
 
-
-
   $openevent.attr("title", "Click to copy email");
   $openevent.tooltip({
     show: {
@@ -32,6 +30,5 @@ $(function() {
         link += (key.charAt(ltr));
       }
     }
-    console.log(event.currentTarget);
     window.prompt ("Copy to clipboard: Ctrl+C, Enter", link);});
 });

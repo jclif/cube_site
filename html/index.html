@@ -1,48 +1,51 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
+  <title>Jared Clifton | Web Developer</title>
 
   <!-- disable zooming -->
   <meta name="viewport" content="initial-scale=1.0, user-scalable=0" />
 
-  <title>Jared Clifton | Web Developer</title>
-
+  <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="../css/reset.css" />
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   <link rel="stylesheet" type="text/css" href="../css/style.css" />
   <link rel="stylesheet" type="text/css" href="../css/cube.css" />
   <link rel="stylesheet" type="text/css" href="../css/snake.css" />
   <link rel="stylesheet" type="text/css" href="../css/tabs.css" />
-  <link rel="stylesheet" type="text/css" href="../css/resume.css" media="all" />
-  <!-- Buttons !!! -->
-  <link rel="stylesheet" type="text/css" href="../css/buttons.css" media="all" />
-  <link rel="stylesheet" type="text/css" href="../css/font-awesome-ie7.min.css" media="all" />
-  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" media="all" />
-
-
+  <link rel="stylesheet" type="text/css" href="../css/resume.css" />
+  <link rel="stylesheet" type="text/css" href="../css/buttons.css" />
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome-ie7.min.css" />
+  <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="../css/responsive-carousel.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../css/responsive-carousel.fade.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="../css/responsive-carousel.pagination.css" media="screen" />
 </head>
+
 <body onload="init()">
-<nav class="clearfix">
-  <ul id="show-links">
-    <li><a class="show-front">Home</a></li>
-    <li><a class="show-right">About</a></li>
-    <li><a class="show-left">Projects</a></li>
-    <li><a class="show-top">Resume</a></li>
-    <li><a class="show-bottom">Games</a></li>
-    <li><a class="show-back">Somethingelse</a></li>
-    <li>
-      <a href="http://www.linkedin.com/pub/jared-clifton/68/45/453" target="_blank"><img class="icon" src="../img/linkedin.svg" alt="linkedin"></a>
-      <a href="https://github.com/jclif" target="_blank"><img class="icon" src="../img/github_alt.svg" alt="octocat"></a>
-      <a href="https://www.facebook.com/jared.clifton" target="_blank"><img class="icon" src="../img/facebook.svg" alt="facebook"></a>
-      <a href="http://jcclif.tumblr.com/" target="_blank"><img class="icon" src="../img/tumblr.svg" alt="tumblr"></a>
-      <img id="open-event" class="icon" src="../img/mail.png" alt="letter">
-    </li>
-  </ul>
-</nav>
+  <nav class="nav-top clearfix">
+    <ul id="show-links">
+      <li><a class="show-front">Home</a></li>
+      <li><a class="show-right">About</a></li>
+      <li><a class="show-left">Projects</a></li>
+      <li><a class="show-top">Resume</a></li>
+      <li><a class="show-bottom">Games</a></li>
+      <li><a class="show-back">Somethingelse</a></li>
+      <li>
+        <a href="http://www.linkedin.com/pub/jared-clifton/68/45/453" target="_blank"><img class="icon" src="../img/linkedin.svg" alt="linkedin"></a>
+        <a href="https://github.com/jclif" target="_blank"><img class="icon" src="../img/github_alt.svg" alt="octocat"></a>
+        <a href="https://www.facebook.com/jared.clifton" target="_blank"><img class="icon" src="../img/facebook.svg" alt="facebook"></a>
+        <a href="http://jcclif.tumblr.com/" target="_blank"><img class="icon" src="../img/tumblr.svg" alt="tumblr"></a>
+        <img id="open-event" class="icon" src="../img/mail.png" alt="letter">
+      </li>
+    </ul>
+  </nav>
 
   <section class="container">
     <div id="cube" class="show-front">
+
       <!-- Home Page -->
       <figure class="front">
         <div class="article">
@@ -50,20 +53,23 @@
           <p>Welcome to my space on the web. It's currently under construction, but feel free to have a look around.</p>
         </div>
       </figure>
+
       <!-- About Page -->
       <figure class="right">
         <div class="article">
-          <h1>About Me:</h1>
-          <p>Howdy. My name is Jared, and I'm a Web Developer. I hail from Texas, but I'm here in New York to look for interesting problems to solve.</p>
-          <p>I like long walks on the beach and hot, luxurious baths. My hobbies include underwater basket weaving, looking great in a scarf, and making a mean cup of joe. wink.</p>
-          <p>Feel free to have a look around and bask in the warm glow of my excellence.</p>
-          <p>You're Welcome.</p>
+          <h1>About</h1>
+          <p>Howdy. My name is Jared, and I'm a Web Developer. I hail from the heartland plains of Texas, but I'm here in New York to look for interesting problems to solve.</p>
+          <p>At Texas A&amp;M University I studied Mathematical Logic, and some Computer Science.</p>
+          <p>In my free time, I enjoy improving my terribly underwhelming chess engine and contributing to open source projects.</p>
+          <p>Check out some of my recent endeavors <a id="about-link" class="show-left">here</a>.</p>
         </div>
       </figure>
+
       <!-- Somethingelse Page -->
       <figure class="back">
         <h1>Somethingelse</h1>
       </figure>
+
       <!-- Portfolio Page -->
       <figure class="left">
         <div class="article projects">
@@ -71,19 +77,20 @@
           <div class="project">
             <h3>Chessnuts</h3>
             <a href="http://chess.jaredcraigclifton.com"><img style="height: 50px;" src="../img/pawn.png" alt="pawn"></a>
+            <div class="carousel" data-transition="fade" data-paginate>
+              <div>
+                <img src="http://placekitten.com/300/300" alt="kitty">
+                <a href="#" class="button button-rounded button-flat"><i class="icon-github"></i> press me</a>
+              </div>
+              <div>
+                <img src="http://placehold.it/300x300" alt="kitty">
+              </div>
+            </div>
             <p>A social chess web application.</p>
           </div>
-          <div class="project">
-            <h3>Ninety-nine Cats</h3>
-            <a href="#cats_on_heroku"><img src="http://placekitten.com/300/300" alt="CATS"></a>
-            <p>Coming Soon</p>
-          </div>
-          <div class="project">
-          <h3>Photo Tagger</h3>
-          <p>Coming Soon</p>
-        </div>
         </div>
       </figure>
+
       <!-- Resume -->
       <figure class="top">
         <div class="article">
@@ -92,7 +99,7 @@
         </div>
       </figure>
 
-      <!-- Games !!! -->
+      <!-- Games -->
       <figure class="bottom">
         <div class="article">
           <h1>Games</h1>
@@ -105,14 +112,12 @@
           </ul>
 
           <div class="tabContent" id="snake">
-            <div>
-              <div class="snake-info clearfix">
-                <p style="float:left;">TIME: <span id="time"></span>  <span id="paused"></span></p>
-                <p style="float:right;">Score: <span id="score"></span></p>
-                <div class="snake-button-wrapper"><span class="button-wrap"><a href="#" class="snake-button button button-pill">Play Snake</a></span></div>
-              </div>
-              <div class="snake-wrapper"></div>
+            <div class="snake-info clearfix">
+              <p style="float:left;">TIME: <span id="time"></span>  <span id="paused"></span></p>
+              <p style="float:right;">Score: <span id="score"></span></p>
+              <div class="snake-button-wrapper"><a href="#" class="snake-button button button-pill">Play Snake</a></div>
             </div>
+            <div class="snake-wrapper"></div>
           </div>
 
           <div class="tabContent" id="asteroids">
@@ -162,17 +167,25 @@
   <script src="../js/tooltip.js"></script>
 
   <!-- Buttons !!! -->
+  <script src="../js/buttons.js"></script>
+
+  <!-- Carousel -->
+  <script src="../js/responsive-carousel.js"></script>
+  <script src="../js/responsive-carousel.autoinit.js"></script>
+  <script src="../js/responsive-carousel.pagination.js"></script>
 
   <!-- Tabs -->
   <script src="../js/tabs.js"></script>
 
   <!-- Snake -->
-  <script src="../js/snake.js"></script>
-  <script src="../js/board.js"></script>
-  <script src="../js/ui.js"></script>
-  <script src="../js/games.js"></script>
+  <script src="../js/snake/snake.js"></script>
+  <script src="../js/snake/board.js"></script>
+  <script src="../js/snake/ui.js"></script>
 
   <!-- Asteroids -->
+
+  <!-- Start Games -->
+  <script src="../js/games.js"></script>
 
   <!-- So stalkers can stalk me stalking stalkers -->
   <script type="text/javascript">

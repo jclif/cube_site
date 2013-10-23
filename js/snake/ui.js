@@ -8,7 +8,7 @@
     this.count = 0;
     this.score = 0;
     this.pressed = false;
-  }
+  };
 
   SnakeUI.prototype.start = function(callback) {
     window.addEventListener("keydown", function(e) {

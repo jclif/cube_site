@@ -5,7 +5,7 @@
     this.size = size;
     this.snake = new Game.Snake(this.size);
     this.apples = [];
-  }
+  };
 
 
   Board.prototype.hasLost = function() {
@@ -25,7 +25,7 @@
     }
 
     return lost;
-  }
+  };
 
   Board.prototype.appleCollision = function() {
     var snake = this.snake.segments;
@@ -36,21 +36,20 @@
     this.apples.forEach(function(apple, index, array) {
       if (snake_head === apple.toString()) {
         found_apple_index = index;
-        console.log("found an apple!");
       }
     });
 
     return found_apple_index;
-  }
+  };
 
   Board.prototype.removeApple = function(i) {
     this.apples.splice(i, 1);
-  }
+  };
 
   Board.prototype.addApple = function() {
     var open = this.getOpenCells();
     this.apples.push(open[Math.floor(Math.random()*this.getOpenCells().length)]);
-  }
+  };
 
   Board.prototype.getOpenCells = function() {
     var open = [];

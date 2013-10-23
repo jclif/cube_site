@@ -13,6 +13,8 @@ var init = function() {
   for (var i=0, len = showPanelLinks.length; i < len; i++) {
     showPanelLinks[i].addEventListener( 'click', onButtonClick, false);
   }
+
+  $('#about-link')[0].addEventListener('click', onButtonClick, false);
 };
 
 window.addEventListener( 'DOMContentLoaded', init, false);

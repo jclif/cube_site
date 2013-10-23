@@ -2,9 +2,9 @@
   box-sizing:border-box;
 }
 
-.game-wrapper {
+.snake-wrapper {
+  width:675px;
   margin:auto;
-  border: 1px solid white;
 }
 
 .row{
