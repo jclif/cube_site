@@ -21,7 +21,6 @@
   <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="../css/responsive-carousel.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="../css/responsive-carousel.fade.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/responsive-carousel.pagination.css" media="screen" />
 </head>
 
 <body onload="init()">
@@ -75,18 +74,20 @@
         <div class="article projects">
           <h1>Projects</h1>
           <div class="project">
-            <h3>Chessnuts</h3>
-            <a href="http://chess.jaredcraigclifton.com"><img style="height: 50px;" src="../img/pawn.png" alt="pawn"></a>
-            <div class="carousel" data-transition="fade" data-paginate>
+            <h3 class="project-name">Chessnuts</h3>
+            <div class="carousel" data-transition="fade">
               <div>
-                <img src="http://placekitten.com/300/300" alt="kitty">
-                <a href="#" class="button button-rounded button-flat"><i class="icon-github"></i> press me</a>
+                <img src="http://placekitten.com/500/500" alt="kitty">
               </div>
               <div>
-                <img src="http://placehold.it/300x300" alt="kitty">
+                <img src="http://placehold.it/500x500" alt="kitty">
               </div>
             </div>
-            <p>A social chess web application.</p>
+            <div class="profect-info">
+              <p class="prject-description">A social chess web application.</p>
+              <p>Live: <a class="project-link" href="http://chess.jaredcraigclifton.com">http://chess.jaredcraigclifton.com</a></p>
+              <a href="https://github.com/jclif/ChessApplication" target="_blank" class="project-source button button-rounded button-flat"><i class="icon-github"></i>Github repository</a>
+          </div>
           </div>
         </div>
       </figure>
@@ -172,7 +173,6 @@
   <!-- Carousel -->
   <script src="../js/responsive-carousel.js"></script>
   <script src="../js/responsive-carousel.autoinit.js"></script>
-  <script src="../js/responsive-carousel.pagination.js"></script>
 
   <!-- Tabs -->
   <script src="../js/tabs.js"></script>
