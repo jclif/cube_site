@@ -7,26 +7,32 @@ SO MUCH TO DO, SO LITTLE TIME
 
 Prettify
 ----------
-* _ custom buttons
+* x custom buttons (appropriated)
 * _ get the goddamn colors right!
 * _ style the sidebar
 
 About
 -----
-* _ be serial
+* x mvp
+
+Resume
+------
+* _ add short version with html/css
+* _ button for downloading pdf version
 
 Projects
 --------
-* _ pics (carousel?)
-* _ link to github
-* _ link to live site (put sites other than chessapp on heroku)
+* [x] pics (carousel?)
+* [x] looking through carousel updates info
+* x link to github
+* x link to live site (put sites other than chessapp on heroku)
 
 Games
 -----
 * _ tabs on all games with options for boards/canvas of different size
-* _ make sure that changing tab or clicking sidebar destroys current game javascript
+* _ make sure that changing tab or clicking sidebar pauses game (for snake and asteroids)
 
-Somethingelse
+Something
 -------------
 * _ what goes here??!!??
 
@@ -42,10 +48,13 @@ Somethingelse
 * _ draw the shapes prettier!
 
 ###Minesweeper
+* _ add dat
 * _ pretty it up a bit
 
 ###Tic Tac Toe
+* _ add dat
 * _ pretty it up a bit
 
 ###Towers of Hanoi
+* _ add dat
 * _ pretty it up a bit

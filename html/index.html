@@ -10,7 +10,8 @@
 
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="../css/reset.css" />
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <!-- there was a jquery-ui.css link here -->
   <link rel="stylesheet" type="text/css" href="../css/style.css" />
   <link rel="stylesheet" type="text/css" href="../css/cube.css" />
   <link rel="stylesheet" type="text/css" href="../css/snake.css" />
@@ -19,27 +20,27 @@
   <link rel="stylesheet" type="text/css" href="../css/buttons.css" />
   <link rel="stylesheet" type="text/css" href="../css/font-awesome-ie7.min.css" />
   <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
-  <link rel="stylesheet" type="text/css" href="../css/responsive-carousel.css" media="screen" />
-  <link rel="stylesheet" type="text/css" href="../css/responsive-carousel.fade.css" media="screen" />
 </head>
 
 <body onload="init()">
   <nav class="nav-top clearfix">
     <ul id="show-links">
-      <li><a class="show-front">Home</a></li>
+      <li><a class="show-front current">Home</a></li>
       <li><a class="show-right">About</a></li>
       <li><a class="show-left">Projects</a></li>
       <li><a class="show-top">Resume</a></li>
       <li><a class="show-bottom">Games</a></li>
-      <li><a class="show-back">Somethingelse</a></li>
+      <li><a class="show-back">Something</a></li>
       <li>
-        <a href="http://www.linkedin.com/pub/jared-clifton/68/45/453" target="_blank"><img class="icon" src="../img/linkedin.svg" alt="linkedin"></a>
-        <a href="https://github.com/jclif" target="_blank"><img class="icon" src="../img/github_alt.svg" alt="octocat"></a>
-        <a href="https://www.facebook.com/jared.clifton" target="_blank"><img class="icon" src="../img/facebook.svg" alt="facebook"></a>
-        <a href="http://jcclif.tumblr.com/" target="_blank"><img class="icon" src="../img/tumblr.svg" alt="tumblr"></a>
-        <img id="open-event" class="icon" src="../img/mail.png" alt="letter">
       </li>
     </ul>
+    <div class="icon-wrapper clearfix">
+      <a href="http://www.linkedin.com/pub/jared-clifton/68/45/453" target="_blank"><img class="icon" src="../img/linkedin.svg" alt="linkedin"></a>
+      <a href="https://github.com/jclif" target="_blank"><img class="icon" src="../img/github_alt.svg" alt="octocat"></a>
+      <a href="https://www.facebook.com/jared.clifton" target="_blank"><img class="icon" src="../img/facebook.svg" alt="facebook"></a>
+      <a href="http://jcclif.tumblr.com/" target="_blank"><img class="icon" src="../img/tumblr.svg" alt="tumblr"></a>
+      <img id="open-event" class="icon" src="../img/mail.png" alt="letter">
+    </div>
   </nav>
 
   <section class="container">
@@ -56,7 +57,6 @@
       <!-- About Page -->
       <figure class="right">
         <div class="article">
-          <h1>About</h1>
           <p>Howdy. My name is Jared, and I'm a Web Developer. I hail from the heartland plains of Texas, but I'm here in New York to look for interesting problems to solve.</p>
           <p>At Texas A&amp;M University I studied Mathematical Logic, and some Computer Science.</p>
           <p>In my free time, I enjoy improving my terribly underwhelming chess engine and contributing to open source projects.</p>
@@ -64,30 +64,23 @@
         </div>
       </figure>
 
-      <!-- Somethingelse Page -->
+      <!-- Something -->
       <figure class="back">
-        <h1>Somethingelse</h1>
       </figure>
 
       <!-- Portfolio Page -->
       <figure class="left">
         <div class="article projects">
-          <h1>Projects</h1>
-          <div class="project">
+          <div class="project clearfix">
+            <span class="prev button button-rounded button-primary">Previous</span>
+            <span class="next button button-rounded button-primary">Next</span>
             <h3 class="project-name">Chessnuts</h3>
-            <div class="carousel" data-transition="fade">
-              <div>
-                <img src="http://placekitten.com/500/500" alt="kitty">
-              </div>
-              <div>
-                <img src="http://placehold.it/500x500" alt="kitty">
-              </div>
-            </div>
+            <img class="project-image" src="../img/chessnuts.png" height="500" alt="chess">
             <div class="profect-info">
-              <p class="prject-description">A social chess web application.</p>
-              <p>Live: <a class="project-link" href="http://chess.jaredcraigclifton.com">http://chess.jaredcraigclifton.com</a></p>
-              <a href="https://github.com/jclif/ChessApplication" target="_blank" class="project-source button button-rounded button-flat"><i class="icon-github"></i>Github repository</a>
-          </div>
+              <p class="project-description">A social chess web application.</p>
+              <a href="http://chess.jaredcraigclifton.com" target="_blank" class="project-link button button-rounded button-flat">Live Demo</a>
+              <a href="https://github.com/jclif/ChessApplication" target="_blank" class="project-source button button-rounded button-flat"><i class="icon-github"></i> View the Source</a>
+            </div>
           </div>
         </div>
       </figure>
@@ -95,7 +88,6 @@
       <!-- Resume -->
       <figure class="top">
         <div class="article">
-          <h1>Resume</h1>
           <p>Included below is a brief account of my skills and experience. Also, feel free to download my <a href="../pdfs/resume-jared-clifton.pdf">official resume</a>, or find me on <a href="http://www.linkedin.com/pub/jared-clifton/68/45/453">linkedin</a></p>
         </div>
       </figure>
@@ -103,7 +95,6 @@
       <!-- Games -->
       <figure class="bottom">
         <div class="article">
-          <h1>Games</h1>
           <ul class="tabrow" id="tabs">
             <li class="selected"><a href="#snake">Snake</a></li>
             <li><a href="#asteroids">Asteroids</a></li>
@@ -154,15 +145,18 @@
   </section>
 
   <!-- jQuery(UI) -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
   <!-- THE CUBEEEE -->
   <script src="../js/utils.js"></script>
-  <script src="../js/rotate-box.js"></script>
+  <script src="../js/cube.js"></script>
   <!-- Tried to use some js to dynamically set cube size on load, -->
   <!-- but not so worky goodly. Womp. Will stick with a centered cube for now. -->
   <!--<script src="../js/sizing.js"></script>-->
+
+  <!-- Nav -->
+  <script src="../js/nav.js"></script>
 
   <!-- Tooltip -->
   <script src="../js/tooltip.js"></script>
@@ -170,9 +164,8 @@
   <!-- Buttons !!! -->
   <script src="../js/buttons.js"></script>
 
-  <!-- Carousel -->
-  <script src="../js/responsive-carousel.js"></script>
-  <script src="../js/responsive-carousel.autoinit.js"></script>
+  <!-- Projects -->
+  <script src="../js/projects.js"></script>
 
   <!-- Tabs -->
   <script src="../js/tabs.js"></script>
@@ -184,23 +177,17 @@
 
   <!-- Asteroids -->
 
+  <!-- Minesweeper -->
+
+  <!-- Tic Tac Toe -->
+
+  <!-- Towers of Hanoi -->
+
   <!-- Start Games -->
   <script src="../js/games.js"></script>
 
   <!-- So stalkers can stalk me stalking stalkers -->
-  <script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-39496525-1']);
-    _gaq.push(['_setDomainName', 'jaredcraigclifton.com']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+  <script src="../js/google.js"></script>
 
 </body>
 </html>

@@ -82,7 +82,6 @@
 
     if(this.board.hasLost()){
       clearInterval(intervalID);
-      alert("Oops!");
       that.callback();
     } else if (this.board.getOpenCells().length === 0) {
       clearInterval(intervalID);

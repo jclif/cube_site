@@ -18,4 +18,3 @@ var init = function() {
 };
 
 window.addEventListener( 'DOMContentLoaded', init, false);
-var windowWidth = $(window).width()

@@ -27,7 +27,11 @@
 }
 
 .snake-info {
-  height:70px;
+  height:40px;
+}
+
+.snake-info p {
+  padding:0;
 }
 
 .snake-button-wrapper {

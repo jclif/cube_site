@@ -9,7 +9,7 @@ body {
 }
 
 div .article {
-  padding: 20px;
+  padding: 10px;
   width:80%;
 }
 
@@ -22,9 +22,9 @@ section, article, nav {
 }
 
 h1 {
-  font-size: 200%;
+  font-size: 180%;
   text-align:center;
-  margin: 30px;
+  margin: 20px;
 }
 
 h3 {
@@ -34,6 +34,10 @@ h3 {
 
 p {
   padding:15px;
+}
+
+.current {
+  color:white;
 }
 
 .nav-top {
@@ -55,14 +59,20 @@ p {
   margin:10px 10px;
 }
 
-.nav-top li .icon {
+.icon-wrapper .icon {
   float:left;
   height:25px;
   margin-right:5px;
 }
 
-.nav-top li .icon:hover {
+.icon-wrapper .icon:hover {
   border: 2px solid transparent;
+}
+
+#open-event {
+  position:fixed;
+  bottom: 10px;
+  left: 10px;
 }
 
 .nav-top li a:hover {
@@ -82,7 +92,26 @@ p {
 .project {
   margin: 20px;
   padding: 20px;
-  border: 5px solid #ddd;
+}
+
+.project-link {
+  float:left;
+}
+
+.prev {
+  float:left;
+}
+
+.next {
+  float:right;
+}
+
+.project-source {
+  float:right;
+}
+
+.project-description {
+  height: 65px;
 }
 
 .right a:hover {
