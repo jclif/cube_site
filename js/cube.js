@@ -1,4 +1,6 @@
 var init = function() {
+  console.log("HI");
+  window.scroll(0,0);
   var box = document.querySelector('.container').children[0],
       showPanelLinks = document.querySelectorAll('#show-links a'),
       panelClassName = 'show-front',
@@ -6,8 +8,18 @@ var init = function() {
       onButtonClick = function( event ){
         box.removeClassName( panelClassName );
         panelClassName = event.target.className;
+        $('#cube').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+          if (panelClassName === "show-left") {
+            var offset = $(".project").offset();
+            $("html,body").animate({
+              scrollTop: offset.top
+            });
+          }
+        });
         box.addClassName( panelClassName );
-        $("html, body").animate({ scrollTop: 0 }, "slow");
+        $("html, body").animate({
+          scrollTop: 0
+        }, "slow");
       };
 
   for (var i=0, len = showPanelLinks.length; i < len; i++) {

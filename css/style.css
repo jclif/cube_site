@@ -167,8 +167,12 @@ a {
   margin-right: 10px;
 }
 
+.project-image {
+  margin-bottom: 15px;
+}
+
 .project-name {
-  margin-bottom: 1px;
+  margin-bottom: 15px;
   font-size: 120%;
 }
 

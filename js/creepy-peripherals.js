@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $(window).on("scroll", function() {
-    var rate = 2;
+    var rate = 1.5;
     var distFromTop = 30;
     $('.me').css("top", -(($(document).scrollTop() / rate) - distFromTop));
   });

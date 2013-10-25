@@ -4,9 +4,8 @@
 }
 
 .resume-button {
-  position: absolute;
-  left: 12%;
-  top: 30px;
+  float:left;
+  margin-top: 50px;
   cursor: pointer;
 }
 
