@@ -15,6 +15,7 @@
   <link rel="stylesheet" type="text/css" href="../css/style.css" />
   <link rel="stylesheet" type="text/css" href="../css/cube.css" />
   <link rel="stylesheet" type="text/css" href="../css/snake.css" />
+  <link rel="stylesheet" type="text/css" href="../css/asteroids.css" />
   <link rel="stylesheet" type="text/css" href="../css/tabs.css" />
   <link rel="stylesheet" type="text/css" href="../css/resume.css" />
   <link rel="stylesheet" type="text/css" href="../css/buttons.css" />
@@ -158,10 +159,12 @@ Ruby, Rails, Javascript, backbone.js, node.js, Git, HTML, CSS, SQL, Vim, BASH, A
           </div>
 
           <div class="tabContent" id="asteroids">
-            <h2>Asteroids</h2>
-            <div>
-              <p>We put the steroid in asteroid.</p>
+            <div class="asteroids-info clearfix">
+              <p style="float:left;">TIME: <span id="asteroids-time"></span>  <span id="asteroids-paused"></span></p>
+              <p style="float:right;">Score: <span id="asteroids-score"></span></p>
+              <div class="asteroids-button-wrapper"><a href="#" class="asteroids-button button button-pill">Play Asteroids</a></div>
             </div>
+            <div class="asteroids-wrapper"></div>
           </div>
 
           <div class="tabContent" id="minesweeper">
@@ -189,9 +192,10 @@ Ruby, Rails, Javascript, backbone.js, node.js, Git, HTML, CSS, SQL, Vim, BASH, A
     </div>
   </section>
 
-  <!-- jQuery(UI) -->
+  <!-- jQuery(UI) / Underscore / Keymaster -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script src="../js/underscore.js"></script>
 
   <!-- THE CUBEEEE -->
   <script src="../js/utils.js"></script>
@@ -224,6 +228,13 @@ Ruby, Rails, Javascript, backbone.js, node.js, Git, HTML, CSS, SQL, Vim, BASH, A
   <script src="../js/snake/ui.js"></script>
 
   <!-- Asteroids -->
+    <script src="../js/asteroids/keymaster.js"></script>
+    <script src="../js/asteroids/inheritance.js"></script>
+    <script src="../js/asteroids/game.js"></script>
+    <script src="../js/asteroids/moving_object.js"></script>
+    <script src="../js/asteroids/bullet.js"></script>
+    <script src="../js/asteroids/ship.js"></script>
+    <script src="../js/asteroids/asteroids.js"></script>
 
   <!-- Minesweeper -->
 

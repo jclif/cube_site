@@ -1,6 +1,4 @@
 var init = function() {
-  console.log("HI");
-  window.scroll(0,0);
   var box = document.querySelector('.container').children[0],
       showPanelLinks = document.querySelectorAll('#show-links a'),
       panelClassName = 'show-front',

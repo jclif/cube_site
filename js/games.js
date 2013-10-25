@@ -7,6 +7,7 @@ $( document ).ready(function() {
   var games = [snake, asteroids, minesweeper, tictactoe, towersofhanoi];
   var active = null;
 
+  // Snake
   $('.snake-button').on("click", function() {
     var offset = $(".snake-wrapper").offset();
     $("html,body").animate({
@@ -20,5 +21,32 @@ $( document ).ready(function() {
 
     var snake = new Game.SnakeUI(44);
     snake.start(callback);
+  });
+
+  // Asteroids
+  $('.asteroids-button').on("click", function() {
+    var offset = $(".asteroids-wrapper").offset();
+    $("html,body").animate({
+      scrollTop: offset.top - 38
+    });
+    $('.asteroids-wrapper').html('');
+    $('.asteroids-button-wrapper').hide();
+    callback = function() {
+      $('.asteroids-button-wrapper').show();
+    };
+
+    var canvas = document.createElement("canvas");
+    canvas.setAttribute("width", "900");
+    canvas.setAttribute("height", "506");
+
+    var $asteroidwrapper = $('.asteroids-wrapper');
+    $asteroidwrapper.append(canvas);
+
+    var background = new Image();
+    background.src = '../img/space.png';
+
+    var ctx = canvas.getContext("2d");
+
+    new Asteroids.Game(ctx, callback, background).start();
   });
 });

@@ -1,30 +1,32 @@
 (function (root) {
   var Asteroids = root.Asteroids = (root.Asteroids || {});
-  if (!(typeof(require) === "undefined")) {
+  if (typeof(require) !== "undefined") {
     _ = require('./underscore.js');
   }
 
-  var Game = Asteroids.Game = function (ctx) {
+  var Game = Asteroids.Game = function (ctx, callback, background) {
     this.intervalID = 0;
     this.ctx = ctx;
     this.asteroids = this.addAsteroids(10);
     this.bullets = [];
+    this.callback = callback;
+    this.background = background;
 
-    this.ship = new Asteroids.Ship([500, 400], [0, 0])
+    this.ship = new Asteroids.Ship([450, 253], [0, 0]);
   };
 
   Game.prototype.bindKeyHandlers = function() {
     var that = this;
 
-    key('s', function(){ that.ship.power([0,.2]) });
-    key('w', function(){ that.ship.power([0,-.2]) });
-    key('d', function(){ that.ship.power([.2,0]) });
-    key('a', function(){ that.ship.power([-.2,0]) });
-    key('space', function(){ that.fireBullet() });
-  }
+    key('s', function(){ that.ship.power([0,0.2]); });
+    key('w', function(){ that.ship.power([0,-0.2]); });
+    key('d', function(){ that.ship.power([0.2,0]); });
+    key('a', function(){ that.ship.power([-0.2,0]); });
+    key('space', function(){ that.fireBullet(); });
+  };
 
-  Game.DIM_X = 1000;
-  Game.DIM_Y = 800;
+  Game.DIM_X = 900;
+  Game.DIM_Y = 506;
   Game.FPS = 30;
 
   Game.prototype.checkCollisions = function() {
@@ -36,25 +38,25 @@
         that.stop();
       }
     });
-  }
+  };
 
   Game.prototype.addAsteroids = function(numAsteroids){
     var asteroids = [];
     var that = this;
 
     _(numAsteroids).times(function() {
-      asteroids.push(Asteroids.Asteroid.randomAsteroid(Game.DIM_X, Game.DIM_Y))
+      asteroids.push(Asteroids.Asteroid.randomAsteroid(Game.DIM_X, Game.DIM_Y));
     });
 
-    return asteroids
-  }
+    return asteroids;
+  };
 
   Game.prototype.draw = function() {
     var that = this;
 
     this.ctx.clearRect(0, 0, Game.DIM_X, Game.DIM_Y);
 
-    that.ctx.drawImage(background, 0, 0);
+    that.ctx.drawImage(that.background, 0, 0);
 
     this.asteroids.forEach(function(asteroid){
       asteroid.draw(that.ctx);
@@ -65,7 +67,7 @@
     });
 
     this.ship.draw(this.ctx);
-  }
+  };
 
   Game.prototype.move = function() {
     var that = this;
@@ -80,7 +82,7 @@
 
     this.ship.move();
 
-  }
+  };
 
   Game.prototype.step = function () {
     this.move();
@@ -88,14 +90,25 @@
     this.checkCollisions();
     this.removeStragglers();
     this.checkBullets();
-  }
+    this.checkWinState();
+  };
+
+  Game.prototype.checkWinState = function () {
+    var that = this;
+
+    if (that.asteroids.length === 0) {
+      console.log("YOU WON!");
+      that.stop();
+      that.callback();
+    }
+  };
 
   Game.prototype.checkBullets = function () {
     var that = this;
     this.bullets.forEach(function(bullet) {
       bullet.hitAsteroids(that, that.asteroids);
     });
-  }
+  };
 
   Game.prototype.removeStragglers = function () {
     var newAsteroidsArray = [];
@@ -119,37 +132,37 @@
     this.bullets = newBulletsArray;
 
     if (!((0 < this.ship.pos[0]) && (Game.DIM_X > this.ship.pos[0]) && (0 < this.ship.pos[1]) && (Game.DIM_Y > this.ship.pos[1]))) {
-      this.ship.pos = [Game.DIM_X / 2, Game.DIM_Y / 2]
-      this.ship.vel = [0, 0]
+      this.ship.pos = [Game.DIM_X / 2, Game.DIM_Y / 2];
+      this.ship.vel = [0, 0];
     }
-  }
+  };
 
   Game.prototype.start = function () {
     var that = this;
 
-    this.bindKeyHandlers()
+    this.bindKeyHandlers();
     this.intervalID = setInterval(function() {
       that.step();
     }, 10000/this.FPS);
-  }
+  };
 
   Game.prototype.stop = function () {
     clearInterval(this.intervalID);
-  }
+  };
 
   Game.prototype.fireBullet = function () {
     var new_bullet = this.ship.fireBullet();
     if (typeof new_bullet != 'undefined') {
-      this.bullets.push(new_bullet)
+      this.bullets.push(new_bullet);
     }
-  }
+  };
 
   Game.prototype.removeBullet = function(bullet) {
-    this.bullets = _.without(this.bullets, bullet)
-  }
+    this.bullets = _.without(this.bullets, bullet);
+  };
 
   Game.prototype.removeAsteroid = function(asteroid) {
-    this.asteroids = _.without(this.asteroids, asteroid)
-  }
+    this.asteroids = _.without(this.asteroids, asteroid);
+  };
 
 })(this);
