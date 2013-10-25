@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Cutive+Mono|Merriweather:400,900italic,900,700italic,700,400italic,300italic,300);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700&subset=latin,latin-ext);
+
 body {
   background: #dddddd;
   font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -8,9 +11,12 @@ body {
   overflow-x: hidden;
 }
 
-div .article {
-  padding: 10px;
-  width:80%;
+em {
+  font-style: italic;
+}
+
+p {
+  line-height: 1.6em;
 }
 
 section, article, nav {
@@ -18,6 +24,8 @@ section, article, nav {
 }
 
 .article {
+  padding-top: 100px;
+  width: 76%;
   margin:auto;
 }
 
@@ -32,8 +40,31 @@ h3 {
   margin: 10px;
 }
 
+h4 {
+  font-size: 130%;
+  margin-bottom: 4px;
+}
+
 p {
   padding:15px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: inherit;
+}
+
+.me {
+  z-index: 1;
+  position: fixed;
+  right: 30px;
+  top: 30px;
+  font-size: 200%;
+  width: 400px;
+  text-align: center;
 }
 
 .current {
@@ -46,12 +77,13 @@ p {
 }
 
 .nav-top {
+  letter-spacing: 2px;
   font-weight: bold;
   z-index: 1;
   position: fixed;
   float: left;
   left:0;
-  top:200px;
+  top: 180px;
   width: 200px;
 }
 
@@ -61,14 +93,20 @@ p {
 
 .nav-top li {
   padding:0;
-  margin:10px 10px;
+  margin-top: 30px;
+  margin-left: 15px;
+}
+
+.nav-top li a:hover {
+  text-decoration:none;
+  border-bottom:2px dotted black;
+  cursor: pointer;
 }
 
 .icon-wrapper {
-  text-align: center;
-  position:fixed;
-  bottom:20px;
-  width: 60px;
+  position: fixed;
+  bottom:0;
+  left: 2px;
 }
 
 .icon-wrapper a {
@@ -76,7 +114,8 @@ p {
 }
 
 .icon-wrapper .icon {
-  margin-top:10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   height:30px;
 }
 
@@ -84,10 +123,7 @@ p {
   border: 2px solid transparent;
 }
 
-.nav-top li a:hover {
-  text-decoration:none;
-  border-bottom:2px dotted black;
-  cursor: pointer;
+.mail {
 }
 
 .home p {
@@ -103,8 +139,16 @@ p {
   padding: 20px;
 }
 
+.project i {
+  margin-right: 10px;
+}
+
 .project-link {
   float:left;
+}
+
+.project-description {
+  margin:5px;
 }
 
 .prev {
