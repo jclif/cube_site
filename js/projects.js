@@ -1,4 +1,12 @@
 $( document ).ready(function() {
+  // Scroll Karma
+  var scrollToProjects = function() {
+    var offset = $(".snake-wrapper").offset();
+    $("html,body").animate({
+      scrollTop: offset.top - 45
+    });
+  };
+
   var projects = ["cn", "nnk", "pt"];
 
   var data = {

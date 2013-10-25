@@ -132,6 +132,7 @@ a {
 
 .projects {
   text-align: center;
+  margin-top:20px;
 }
 
 .project {
@@ -141,6 +142,11 @@ a {
 
 .project i {
   margin-right: 10px;
+}
+
+.project-name {
+  margin-bottom: 1px;
+  font-size: 120%;
 }
 
 .project-link {
