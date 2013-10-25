@@ -10,7 +10,7 @@ $( document ).ready(function() {
   $('.snake-button').on("click", function() {
     var offset = $(".snake-wrapper").offset();
     $("html,body").animate({
-      scrollTop: offset.top - 45
+      scrollTop: offset.top - 38
     });
     $('.snake-wrapper').html('');
     $('.snake-button-wrapper').hide();
@@ -18,7 +18,7 @@ $( document ).ready(function() {
       $('.snake-button-wrapper').show();
     };
 
-    var snake = new Game.SnakeUI(43);
+    var snake = new Game.SnakeUI(44);
     snake.start(callback);
   });
 });

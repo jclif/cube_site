@@ -77,7 +77,7 @@ a {
 }
 
 .nav-top {
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-weight: bold;
   z-index: 1;
   position: fixed;
@@ -104,9 +104,12 @@ a {
 }
 
 .icon-wrapper {
+  z-index: 1;
   position: fixed;
   bottom:0;
-  left: 2px;
+  right: 10px;
+  width: 50px;
+  text-align: center;
 }
 
 .icon-wrapper a {
@@ -116,7 +119,6 @@ a {
 .icon-wrapper .icon {
   margin-right: 10px;
   margin-bottom: 10px;
-  height:30px;
 }
 
 .icon-wrapper .icon:hover {
@@ -124,6 +126,27 @@ a {
 }
 
 .mail {
+  height:30px;
+}
+
+.twitter {
+  height: 35px;
+}
+
+.tumblr {
+  height: 30px;
+}
+
+.facebook {
+  height: 30px;
+}
+
+.github {
+  height: 35px;
+}
+
+.linkedin {
+  height: 30px;
 }
 
 .home p {

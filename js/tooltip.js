@@ -7,8 +7,8 @@ $(function() {
       delay: 30
     },
     position: {
-      my: "top",
-      at: "top+40"
+      my: "left",
+      at: "left-140"
     },
     hide: {
       delay: 30
