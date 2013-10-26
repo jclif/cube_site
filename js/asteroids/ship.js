@@ -5,8 +5,8 @@
     Asteroids.MovingObject.call(this, pos, vel, Ship.RADIUS, Ship.COLOR);
   };
 
-  Ship.COLOR = "white";
-  Ship.RADIUS = 3;
+  Ship.COLOR = "green";
+  Ship.RADIUS = 5;
 
   Ship.inherits(Asteroids.MovingObject);
 
@@ -16,8 +16,8 @@
   };
 
   Ship.prototype.slow = function() {
-    this.vel[0] *= 0.95;
-    this.vel[1] *= 0.95;
+    this.vel[0] *= 0.99;
+    this.vel[1] *= 0.99;
   };
 
 

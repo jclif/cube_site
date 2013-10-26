@@ -4,48 +4,58 @@
     _ = require('./underscore.js');
   }
 
-  var Game = Asteroids.Game = function (ctx, callback, background) {
+  var Game = Asteroids.Game = function (ctx, callback, background, img) {
     this.intervalID = 0;
     this.ctx = ctx;
-    this.asteroids = this.addAsteroids(10);
+    this.asteroids = this.addAsteroids(10, img);
     this.bullets = [];
     this.callback = callback;
     this.background = background;
     this.ship = new Asteroids.Ship([400, 225], [0,0]);
+
+    window.addEventListener("keydown", function(e) {
+        // space and arrow keys
+        if([32, 37, 38, 39, 40, 65, 68, 83, 87].indexOf(e.keyCode) > -1) {
+            e.preventDefault();
+        }
+    }, false);
   };
 
   Game.prototype.bindKeyHandlers = function() {
     var that = this;
 
     key('s', function(){ that.ship.power([0,0.2]); });
+    key('down', function(){ that.ship.power([0,0.2]); });
     key('w', function(){ that.ship.power([0,-0.2]); });
+    key('up', function(){ that.ship.power([0,-0.2]); });
     key('d', function(){ that.ship.power([0.2,0]); });
+    key('right', function(){ that.ship.power([0.2,0]); });
     key('a', function(){ that.ship.power([-0.2,0]); });
+    key('left', function(){ that.ship.power([-0.2,0]); });
     key('space', function(){ that.fireBullet(); });
   };
 
   Game.DIM_X = 800;
   Game.DIM_Y = 450;
-  Game.FPS = 30;
 
   Game.prototype.checkCollisions = function() {
     var that = this;
 
     this.asteroids.forEach(function(asteroid) {
       if (asteroid.isCollidedWith(that.ship)) {
-        window.alert("The game is over!!");
+        window.alert("You lost !!!");
         that.stop();
         that.callback();
       }
     });
   };
 
-  Game.prototype.addAsteroids = function(numAsteroids){
+  Game.prototype.addAsteroids = function(numAsteroids, img){
     var asteroids = [];
     var that = this;
 
     _(numAsteroids).times(function() {
-      asteroids.push(Asteroids.Asteroid.randomAsteroid(Game.DIM_X, Game.DIM_Y));
+      asteroids.push(Asteroids.Asteroid.randomAsteroid(Game.DIM_X, Game.DIM_Y, img));
     });
 
     return asteroids;
@@ -81,16 +91,16 @@
     });
 
     this.ship.move();
-
   };
 
   Game.prototype.step = function () {
+    this.checkWinState();
     this.move();
+    this.ship.slow();
     this.draw();
     this.checkCollisions();
     this.removeStragglers();
     this.checkBullets();
-    this.checkWinState();
   };
 
   Game.prototype.checkWinState = function () {
@@ -111,15 +121,18 @@
   };
 
   Game.prototype.removeStragglers = function () {
-    var newAsteroidsArray = [];
 
     this.asteroids.forEach(function(asteroid) {
-      if ((0 < asteroid.pos[0]) && (Game.DIM_X > asteroid.pos[0]) && (0 < asteroid.pos[1]) && (Game.DIM_Y > asteroid.pos[1])) {
-        newAsteroidsArray.push(asteroid);
+      if (0 > asteroid.pos[0]) {
+        asteroid.pos[0] = Game.DIM_X;
+      } else if (Game.DIM_X < asteroid.pos[0]) {
+        asteroid.pos[0] = 0;
+      } else if (0 > asteroid.pos[1]) {
+        asteroid.pos[1] = Game.DIM_Y;
+      } else if (Game.DIM_Y < asteroid.pos[1]) {
+        asteroid.pos[1] = 0;
       }
-    });
-
-    this.asteroids = newAsteroidsArray;
+      });
 
     var newBulletsArray = [];
 
@@ -143,7 +156,7 @@
     this.bindKeyHandlers();
     this.intervalID = setInterval(function() {
       that.step();
-    }, 10000/this.FPS);
+    }, 30);
   };
 
   Game.prototype.stop = function () {

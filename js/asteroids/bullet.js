@@ -5,8 +5,8 @@
     Asteroids.MovingObject.call(this, pos, vel, Bullet.RADIUS, Bullet.COLOR);
   };
 
-  Bullet.COLOR = "green";
-  Bullet.RADIUS = 5;
+  Bullet.COLOR = "white";
+  Bullet.RADIUS = 3;
 
   Bullet.inherits(Asteroids.MovingObject);
 
@@ -18,6 +18,6 @@
         game.removeBullet(that);
       }
     });
-  }
+  };
 
 })(this);

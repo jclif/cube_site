@@ -25,6 +25,8 @@ $( document ).ready(function() {
 
   // Asteroids
   $('.asteroids-button').on("click", function() {
+    $('#asteroids-audio')[0].currentTime=0;
+    $('#asteroids-audio')[0].play();
     var offset = $(".asteroids-wrapper").offset();
     $("html,body").animate({
       scrollTop: offset.top - 38
@@ -33,6 +35,7 @@ $( document ).ready(function() {
     $('.asteroids-button-wrapper').hide();
     callback = function() {
       $('.asteroids-button-wrapper').show();
+      $('#asteroids-audio')[0].pause();
     };
 
     var canvas = document.createElement("canvas");
@@ -45,8 +48,11 @@ $( document ).ready(function() {
     var background = new Image();
     background.src = '../img/space.png';
 
+    var img = new Image();
+    img.src = '../img/asteroid.png';
+
     var ctx = canvas.getContext("2d");
 
-    new Asteroids.Game(ctx, callback, background).start();
+    new Asteroids.Game(ctx, callback, background, img).start();
   });
 });

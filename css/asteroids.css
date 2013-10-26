@@ -3,3 +3,18 @@
   width:800px;
   margin: auto;
 }
+
+.asteroids-button-wrapper {
+  font-weight: bold;
+  margin: auto;
+  width:160px;
+  text-align: center;
+}
+
+.asteroids-info {
+  height:40px;
+}
+
+.asteroids-info p {
+  padding:0;
+}
