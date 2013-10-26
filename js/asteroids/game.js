@@ -11,8 +11,7 @@
     this.bullets = [];
     this.callback = callback;
     this.background = background;
-
-    this.ship = new Asteroids.Ship([450, 253], [0, 0]);
+    this.ship = new Asteroids.Ship([400, 225], [0,0]);
   };
 
   Game.prototype.bindKeyHandlers = function() {
@@ -25,8 +24,8 @@
     key('space', function(){ that.fireBullet(); });
   };
 
-  Game.DIM_X = 900;
-  Game.DIM_Y = 506;
+  Game.DIM_X = 800;
+  Game.DIM_Y = 450;
   Game.FPS = 30;
 
   Game.prototype.checkCollisions = function() {
@@ -36,6 +35,7 @@
       if (asteroid.isCollidedWith(that.ship)) {
         window.alert("The game is over!!");
         that.stop();
+        that.callback();
       }
     });
   };

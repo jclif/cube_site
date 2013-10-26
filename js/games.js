@@ -36,8 +36,8 @@ $( document ).ready(function() {
     };
 
     var canvas = document.createElement("canvas");
-    canvas.setAttribute("width", "900");
-    canvas.setAttribute("height", "506");
+    canvas.setAttribute("width", "800");
+    canvas.setAttribute("height", "450");
 
     var $asteroidwrapper = $('.asteroids-wrapper');
     $asteroidwrapper.append(canvas);
