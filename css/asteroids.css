@@ -23,6 +23,8 @@
 }
 
 .soundcloud-wrapper {
+  width: 80px;
+  height:50px;
   position: absolute;
   top: 0;
   right: 0;

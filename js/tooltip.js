@@ -30,5 +30,23 @@ $(function() {
         link += (key.charAt(ltr));
       }
     }
-    window.prompt ("Copy to clipboard: Ctrl+C, Enter", link);});
+    window.prompt ("Copy to clipboard: Ctrl+C, Enter", link);
+  });
+
+  $soundcloud = $(".soundcloud-wrapper");
+
+  $soundcloud.attr("title", "Special thanks to ma boi Austin for this sick beat. Follow the link to check out his stuff and show him some love");
+  $soundcloud.tooltip({
+    show: {
+      delay: 30
+    },
+    position: {
+      my: "left top",
+      at: "left-25 top+100"
+    },
+    hide: {
+      delay: 30
+    }
+  });
+
 });
