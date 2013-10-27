@@ -1,8 +1,9 @@
 (function (root) {
   var Asteroids = root.Asteroids = (root.Asteroids || {});
 
-  var Ship = Asteroids.Ship = function (pos, vel) {
+  var Ship = Asteroids.Ship = function (pos, vel, fire) {
     Asteroids.MovingObject.call(this, pos, vel, Ship.RADIUS, Ship.COLOR);
+    this.fire = fire;
   };
 
   Ship.COLOR = "green";
@@ -37,4 +38,45 @@
     }
   };
 
+  Ship.prototype.drawPowerUp = function(ctx) {
+    var that = this;
+
+    var rad = 180 * Math.PI / 180;
+
+    ctx.save();
+    ctx.translate(that.pos[0], that.pos[1]);
+    ctx.rotate(rad);
+    ctx.drawImage(that.fire, -(that.fire.width/2), (-(that.fire.height/2)-15));
+    ctx.restore();
+  };
+
+  Ship.prototype.drawPowerDown = function(ctx) {
+    var that = this;
+
+    ctx.drawImage(that.fire, that.pos[0] -(2*Ship.RADIUS), that.pos[1] - (6*Ship.RADIUS));
+  };
+
+  Ship.prototype.drawPowerLeft = function(ctx) {
+    var that = this;
+
+    var rad = 90 * Math.PI / 180;
+
+    ctx.save();
+    ctx.translate(that.pos[0], that.pos[1]);
+    ctx.rotate(rad);
+    ctx.drawImage(that.fire, -(that.fire.width/2), (-(that.fire.height/2)-15));
+    ctx.restore();
+  };
+
+  Ship.prototype.drawPowerRight = function(ctx) {
+    var that = this;
+
+    var rad = 270 * Math.PI / 180;
+
+    ctx.save();
+    ctx.translate(that.pos[0], that.pos[1]);
+    ctx.rotate(rad);
+    ctx.drawImage(that.fire, -(that.fire.width/2), (-(that.fire.height/2)-15));
+    ctx.restore();
+  };
 })(this);

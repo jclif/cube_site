@@ -1,12 +1,4 @@
 $( document ).ready(function() {
-  // Initialize Games and variables to keep track of active game
-  var asteroids = null;
-  var minesweeper = null;
-  var tictactoe = null;
-  var towersofhanoi = null;
-  var games = [snake, asteroids, minesweeper, tictactoe, towersofhanoi];
-  var active = null;
-
   // Snake
   $('.snake-button').on("click", function() {
     var offset = $(".snake-wrapper").offset();
@@ -18,9 +10,10 @@ $( document ).ready(function() {
     callback = function() {
       $('.snake-button-wrapper').show();
     };
-
     var snake = new Game.SnakeUI(44);
+    active = snake;
     snake.start(callback);
+    console.log(active);
   });
 
   // Asteroids
@@ -48,11 +41,19 @@ $( document ).ready(function() {
     var background = new Image();
     background.src = '../img/space.png';
 
-    var img = new Image();
-    img.src = '../img/asteroid.png';
+    var asteroid = new Image();
+    asteroid.src = '../img/asteroid.png';
+
+    var fire = new Image();
+    fire.src = '../img/fire.png';
 
     var ctx = canvas.getContext("2d");
-
-    new Asteroids.Game(ctx, callback, background, img).start();
+    var asteroids = new Asteroids.Game(ctx, callback, background, asteroid, fire);
+    active = asteroids;
+    asteroids.start();
   });
+
+  // Hanoi
+  var hanoi = new Hanoi.Game(5);
+  hanoi.run();
 });

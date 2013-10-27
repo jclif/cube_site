@@ -4,14 +4,14 @@
     _ = require('./underscore.js');
   }
 
-  var Game = Asteroids.Game = function (ctx, callback, background, img) {
+  var Game = Asteroids.Game = function (ctx, callback, background, asteroid, fire) {
     this.intervalID = 0;
     this.ctx = ctx;
-    this.asteroids = this.addAsteroids(10, img);
+    this.asteroids = this.addAsteroids(10, asteroid);
     this.bullets = [];
     this.callback = callback;
     this.background = background;
-    this.ship = new Asteroids.Ship([400, 225], [0,0]);
+    this.ship = new Asteroids.Ship([400, 225], [0,0], fire);
 
     window.addEventListener("keydown", function(e) {
         // space and arrow keys
@@ -24,15 +24,41 @@
   Game.prototype.bindKeyHandlers = function() {
     var that = this;
 
-    key('s', function(){ that.ship.power([0,0.2]); });
-    key('down', function(){ that.ship.power([0,0.2]); });
-    key('w', function(){ that.ship.power([0,-0.2]); });
-    key('up', function(){ that.ship.power([0,-0.2]); });
-    key('d', function(){ that.ship.power([0.2,0]); });
-    key('right', function(){ that.ship.power([0.2,0]); });
-    key('a', function(){ that.ship.power([-0.2,0]); });
-    key('left', function(){ that.ship.power([-0.2,0]); });
-    key('space', function(){ that.fireBullet(); });
+    key('s', function(){
+      that.ship.power([0,0.3]);
+      that.ship.drawPowerDown(that.ctx);
+    });
+    key('down', function(){
+      that.ship.power([0,0.3]);
+      that.ship.drawPowerDown(that.ctx);
+    });
+    key('w', function(){
+      that.ship.power([0,-0.3]);
+      that.ship.drawPowerUp(that.ctx);
+    });
+    key('up', function(){
+      that.ship.power([0,-0.3]);
+      that.ship.drawPowerUp(that.ctx);
+    });
+    key('d', function(){
+      that.ship.power([0.3,0]);
+      that.ship.drawPowerRight(that.ctx);
+    });
+    key('right', function(){
+      that.ship.power([0.3,0]);
+      that.ship.drawPowerRight(that.ctx);
+    });
+    key('a', function(){
+      that.ship.power([-0.3,0]);
+      that.ship.drawPowerLeft(that.tx);
+    });
+    key('left', function(){
+      that.ship.power([-0.3,0]);
+      that.ship.drawPowerLeft(that.ctx);
+    });
+    key('space', function(){
+      that.fireBullet();
+    });
   };
 
   Game.DIM_X = 800;

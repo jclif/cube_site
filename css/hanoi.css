@@ -1,0 +1,28 @@
+*{
+  box-sizing:border-box;
+}
+
+.hanoi-wrapper {
+  height: 400px;
+}
+
+.currentTower {
+  background: hsla(100, 50%, 50%, 0.5);
+}
+
+.disk{
+  border:1px solid black;
+  margin-right: auto;
+  margin-left: auto;
+  background:grey;
+}
+
+.placeholder{
+}
+
+.tower{
+  float: left;
+  width: 33%;
+  height: 100%;
+  border:1px solid;
+}

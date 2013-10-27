@@ -80,7 +80,7 @@
     }
 
 
-    if(this.board.hasLost()){
+    if (this.board.hasLost()) {
       clearInterval(intervalID);
       that.callback();
     } else if (this.board.getOpenCells().length === 0) {
@@ -110,16 +110,16 @@
     $('#time').html(this.count);
     $('#score').html(this.score);
     if (intervalID === null) {
-      $('#paused').html("PAUSED!!!");
+      $('#snake-paused').html("PAUSED!!!");
     } else {
-      $('#paused').html("");
+      $('#snake-paused').html("");
     }
-  }
+  };
 
   SnakeUI.prototype.clearSnakeUI = function() {
     $('.snake').removeClass('snake');
     $('.apple').removeClass('apple');
-  }
+  };
 
   SnakeUI.prototype.draw = function() {
     var $gameWrapper = $('.snake-wrapper');
