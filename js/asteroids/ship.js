@@ -1,15 +1,22 @@
 (function (root) {
   var Asteroids = root.Asteroids = (root.Asteroids || {});
 
-  var Ship = Asteroids.Ship = function (pos, vel, fire) {
+  var Ship = Asteroids.Ship = function (pos, vel, fire, ship) {
     Asteroids.MovingObject.call(this, pos, vel, Ship.RADIUS, Ship.COLOR);
     this.fire = fire;
+    this.ship = ship;
   };
 
   Ship.COLOR = "green";
   Ship.RADIUS = 5;
 
   Ship.inherits(Asteroids.MovingObject);
+
+  Ship.prototype.draw = function (ctx) {
+    var that = this;
+
+    ctx.drawImage(that.ship, that.pos[0] - (Ship.RADIUS/2) - 17, that.pos[1] - (Ship.RADIUS/2)-5);
+  };
 
   Ship.prototype.power = function(impulse) {
     this.vel[0] += impulse[0];

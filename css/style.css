@@ -73,6 +73,7 @@ a {
 }
 
 .tumblr {
+  text-align: center;
   margin: auto;
 }
 
@@ -168,8 +169,10 @@ a {
 }
 
 .project {
-  margin: 20px;
-  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .project i {

@@ -4,14 +4,14 @@
     _ = require('./underscore.js');
   }
 
-  var Game = Asteroids.Game = function (ctx, callback, background, asteroid, fire) {
+  var Game = Asteroids.Game = function (ctx, callback, background, asteroid, fire, ship) {
     this.intervalID = 0;
     this.ctx = ctx;
     this.asteroids = this.addAsteroids(10, asteroid);
     this.bullets = [];
     this.callback = callback;
     this.background = background;
-    this.ship = new Asteroids.Ship([400, 225], [0,0], fire);
+    this.ship = new Asteroids.Ship([400, 225], [0,0], fire, ship);
 
     window.addEventListener("keydown", function(e) {
         // space and arrow keys

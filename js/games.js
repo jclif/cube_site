@@ -53,8 +53,11 @@ $( document ).ready(function() {
     var fire = new Image();
     fire.src = '../img/fire.png';
 
+    var ship = new Image();
+    ship.src = '../img/spaceship.png';
+
     var ctx = canvas.getContext("2d");
-    var asteroids = new Asteroids.Game(ctx, callback, background, asteroid, fire);
+    var asteroids = new Asteroids.Game(ctx, callback, background, asteroid, fire, ship);
     active = asteroids;
     asteroids.start();
 

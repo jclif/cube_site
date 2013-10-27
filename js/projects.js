@@ -31,7 +31,7 @@ $( document ).ready(function() {
       description: "A web application for those who want all the perks of cat ownership, without the messy upkeep. Rent your next cat with Ninety-nine cats.",
       source: "https://github.com/jclif/ninety-nine-cats",
       link: "#cats-on-heroku",
-      image: "http://placekitten.com/500/500"
+      image: "../img/99cats.png"
     }
   };
 
