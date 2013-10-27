@@ -8,6 +8,14 @@
   <!-- disable zooming -->
   <meta name="viewport" content="initial-scale=1.0, user-scalable=0" />
 
+  <!-- Utils -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  <script src="../js/underscore.js"></script>
+
+  <!-- Tumblr -->
+  <script type="text/javascript" src="http://jcclif.tumblr.com/api/read/json"></script>
+
   <!-- Styles -->
   <link rel="stylesheet" type="text/css" href="../css/reset.css" />
   <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
@@ -29,10 +37,10 @@
     <ul id="show-links">
       <li><a class="show-front current">Home</a></li>
       <li><a class="show-right">About</a></li>
-      <li><a class="show-left">Projects</a></li>
+      <li><a class="show-left">Portfolio</a></li>
       <li><a class="show-top">Resume</a></li>
       <li><a class="show-bottom">Games</a></li>
-      <li style="display:none;"><a class="show-back">Something</a></li>
+      <li><a class="show-back">Personal</a></li>
     </ul>
   </nav>
 
@@ -68,8 +76,27 @@
         </div>
       </figure>
 
-      <!-- Something -->
+      <!-- Personal -->
       <figure class="back">
+        <div class="article personal">
+          <div class="tumblr">
+            <h4>Recent Tumblr Posts:</h4>
+            <script type="text/javascript">
+              _(5).times(function(n){
+                document.write(
+                  '<a href="' +
+                  tumblr_api_read['posts'][n]['url'] +
+                  '">' +
+                  tumblr_api_read['posts'][n]['regular-title'] +
+                  '</' + 'a>'
+                  );
+              });
+            </script>
+          </div>
+          <hr>
+          <a class="twitter-timeline" href="https://twitter.com/jaredcclifton" data-widget-id="392704917426536449">Tweets by @jaredcclifton</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
       </figure>
 
       <!-- Portfolio Page -->
@@ -163,12 +190,10 @@ Ruby, Rails, Javascript, backbone.js, node.js, Git, HTML, CSS, SQL, Vim, BASH, A
 
           <div class="tabContent" id="asteroids">
             <div class="asteroids-info clearfix">
-              <p style="float:left;">TIME: <span id="asteroids-time"></span>  <span id="asteroids-paused"></span></p>
-              <p style="float:right;">Score: <span id="asteroids-score"></span></p>
               <div class="asteroids-button-wrapper"><a href="#" class="asteroids-button button button-pill">Play Asteroids</a></div>
             </div>
             <div class="asteroids-wrapper"></div>
-            <audio id="asteroids-audio" src="http://api.soundcloud.com/tracks/115712957/stream?client_id=611bb0eab5e68dfbe36d8e732db14d74"></audio>
+            <a href="https://soundcloud.com/ebenopsis" class="soundcloud-wrapper" target="_blank"><img class="soundcloud" src="../img/soundcloud.svg" alt="soundcloud"></a>
           </div>
 
           <div class="tabContent" id="minesweeper">
@@ -205,11 +230,6 @@ Ruby, Rails, Javascript, backbone.js, node.js, Git, HTML, CSS, SQL, Vim, BASH, A
     </div>
   </section>
 
-  <!-- jQuery(UI) / Underscore / Keymaster -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-  <script src="../js/underscore.js"></script>
-
   <!-- Soundcloud -->
   <script src="http://connect.soundcloud.com/sdk.js"></script>
 
@@ -231,6 +251,9 @@ Ruby, Rails, Javascript, backbone.js, node.js, Git, HTML, CSS, SQL, Vim, BASH, A
 
   <!-- Buttons !!! -->
   <script src="../js/buttons.js"></script>
+
+  <!-- Pulsate -->
+  <script src="../js/pulsate.js"></script>
 
   <!-- Projects -->
   <script src="../js/projects.js"></script>

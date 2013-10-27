@@ -50,7 +50,7 @@
     });
     key('a', function(){
       that.ship.power([-0.3,0]);
-      that.ship.drawPowerLeft(that.tx);
+      that.ship.drawPowerLeft(that.ctx);
     });
     key('left', function(){
       that.ship.power([-0.3,0]);

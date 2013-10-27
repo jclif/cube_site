@@ -67,6 +67,15 @@ a {
   text-align: center;
 }
 
+#twitter-widget-0 {
+  display: block;
+  margin: auto;
+}
+
+.tumblr {
+  margin: auto;
+}
+
 .current {
   color:white;
   text-shadow:

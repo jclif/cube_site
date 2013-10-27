@@ -7,7 +7,7 @@ $( document ).ready(function() {
     });
   };
 
-  var projects = ["cn", "nnk", "pt"];
+  var projects = ["cn", "zil", "nnk"];
 
   var data = {
     "cn": {
@@ -18,20 +18,20 @@ $( document ).ready(function() {
       image: "../img/chessnuts.png"
     },
 
+    "zil": {
+      name: "Zillookalike",
+      description: "A web applicaton with the scandelous aspiration of becoming rightfully called a zillow clone.",
+      source: "https://github.com/jclif/zillow-clone",
+      link: "#zillow-on-heroku",
+      image: "../img/zillow.png"
+    },
+
     "nnk": {
       name: "Ninety-nine Cats",
       description: "A web application for those who want all the perks of cat ownership, without the messy upkeep. Rent your next cat with Ninety-nine cats.",
       source: "https://github.com/jclif/ninety-nine-cats",
       link: "#cats-on-heroku",
       image: "http://placekitten.com/500/500"
-    },
-
-    "pt": {
-      name: "Photo Tagger",
-      description: "A web application for tagging photos of friends.",
-      source: "https://github.com/jclif/photo-tagger",
-      link: "#photos-on-heroku",
-      image: "http://placehold.it/500x500"
     }
   };
 
