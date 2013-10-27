@@ -17,6 +17,7 @@
   <link rel="stylesheet" type="text/css" href="../css/snake.css" />
   <link rel="stylesheet" type="text/css" href="../css/asteroids.css" />
   <link rel="stylesheet" type="text/css" href="../css/hanoi.css" />
+  <link rel="stylesheet" type="text/css" href="../css/tictactoe.css" />
   <link rel="stylesheet" type="text/css" href="../css/tabs.css" />
   <link rel="stylesheet" type="text/css" href="../css/resume.css" />
   <link rel="stylesheet" type="text/css" href="../css/buttons.css" />
@@ -59,10 +60,11 @@
       <!-- About Page -->
       <figure class="right">
         <div class="article">
-          <p>Howdy. My name is Jared, and I'm a Web Developer. I hail from the heartland plains o' Texas, but I'm here in New York to look for interesting problems to solve.</p>
-          <p>At Texas A&amp;M University I studied Mathematical Logic, and some Computer Science.</p>
-          <p>In my free time, I enjoy improving my terribly underwhelming chess engine and contributing to open source projects.</p>
-          <p>Check out some of my recent endeavors <a id="about-link" class="show-left">here</a>.</p>
+          <p>Howdy! My name's Jared, and I'm a web developer.</p>
+          <p>I hail from Texas, studied Mathematical Logic and some Computer Science at Texas A&amp;M University and, after taking some time to travel and learn, have settled down in New York City to look for a web development position, and hopefully some interesting problems to solve.</p>
+          <p>In my free time I enjoy reading, beating noobs at table tennis, improving my terribly underwhelming chess engine, and contributing to open source projects.</p>
+          <p>Check out some of my recent endeavors <a id="about-link" class="show-left"><em>here</em></a>.</p>
+          <p>Thanks for stopping by!</p>
         </div>
       </figure>
 
@@ -102,7 +104,7 @@
                 <p class="resume-entry">
                   <strong>Self-Employed</strong>
                   <span class="resume-date">Summer 2012 - Summer 2013</span><br>
-                  <em>Teaching Assistant</em>
+                  <em>Web Developer</em>
                 </p>
 
                 <p class="resume-entry">
@@ -131,7 +133,7 @@
 
                 <h4 class="resume-section">Skills/Interests</h4>
                 <p class="resume-entry">
-Ruby, Rails, Javascript, backbone.js, node.js, Git, HTML, CSS, SQL, Vim, BASH, Apache, Nginx, Python, Django, Heroku, TDD (RSpec, Cucumber, &amp; Jasmine), <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span>, C++, Java
+Ruby, Rails, Javascript, backbone.js, node.js, Git, HTML, CSS, SQL, Vim, BASH, Apache, Nginx, Python, Django, Heroku, test-driven development (RSpec, Cucumber, &amp; Jasmine), <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span>, C++, Java
                 </p>
 
           </div>
@@ -177,7 +179,16 @@ Ruby, Rails, Javascript, backbone.js, node.js, Git, HTML, CSS, SQL, Vim, BASH, A
           </div>
 
           <div class="tabContent" id="tictactoe">
-            <div>
+            <div class="ttt-wrapper">
+              <div class="ttt-cell" id = "ttt_00"></div>
+              <div class="ttt-cell" id = "ttt_01"></div>
+              <div class="ttt-cell" id = "ttt_02"></div>
+              <div class="ttt-cell" id = "ttt_10"></div>
+              <div class="ttt-cell" id = "ttt_11"></div>
+              <div class="ttt-cell" id = "ttt_12"></div>
+              <div class="ttt-cell" id = "ttt_20"></div>
+              <div class="ttt-cell" id = "ttt_21"></div>
+              <div class="ttt-cell" id = "ttt_22"></div>
             </div>
           </div>
 
@@ -242,6 +253,7 @@ Ruby, Rails, Javascript, backbone.js, node.js, Git, HTML, CSS, SQL, Vim, BASH, A
   <script src="../js/asteroids/asteroids.js"></script>
 
   <!-- Tic Tac Toe -->
+  <script src="../js/tictactoe.js"></script>
 
   <!-- Towers of Hanoi -->
   <script src="../js/hanoi/hanoi.js"></script>

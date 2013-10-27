@@ -56,4 +56,8 @@ $( document ).ready(function() {
   // Hanoi
   var hanoi = new Hanoi.Game(5);
   hanoi.run();
+
+  // Tic Tac Toe
+  var tictactoe = new TTT.Game();
+  tictactoe.run();
 });

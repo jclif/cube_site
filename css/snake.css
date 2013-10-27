@@ -7,22 +7,22 @@
   margin:auto;
 }
 
-.row{
+.snake-wrapper .row{
   height:15px;
 }
 
-.cell {
+.snake-wrapper .cell {
   background: black;
   height:15px;
   width:15px;
   float:left;
 }
 
-.snake {
+.snake-wrapper .snake {
   background: green;
 }
 
-.apple {
+.snake-wrapper .apple {
   background: red ;
 }
 

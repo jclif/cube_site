@@ -1,0 +1,20 @@
+.ttt-wrapper {
+  margin: auto;
+  width: 306px;
+  height: 306px;
+}
+
+.ttt-cell{
+  float: left;
+  width: 100px;
+  height: 100px;
+  border: 1px solid;
+}
+
+.ttt-wrapper .x{
+  background: #EE0000;
+}
+
+.ttt-wrapper .o{
+  background: #0000EE;
+}

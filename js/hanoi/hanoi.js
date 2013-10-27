@@ -59,7 +59,7 @@
     }
 
     if (game.isWon()) {
-      console.log("You win!");
+      console.log("you won");
       READER.close();
     } else {
       game.run();

@@ -6,21 +6,21 @@
   height: 400px;
 }
 
-.currentTower {
+.hanoi-wrapper .currentTower {
   background: hsla(100, 50%, 50%, 0.5);
 }
 
-.disk{
+.disk {
   border:1px solid black;
   margin-right: auto;
   margin-left: auto;
   background:grey;
 }
 
-.placeholder{
+.hanoi-wrapper .placeholder {
 }
 
-.tower{
+.hanoi-wrapper .tower {
   float: left;
   width: 33%;
   height: 100%;
